@@ -1,0 +1,12 @@
+[
+    {
+        "caption": "pycalc [✓]",
+        "command": "pycalc_toggle",
+        "id": "pycalc"
+    },
+    {
+        "caption": "pycalc selected",
+        "command": "pycalc_selected",
+        "id": "pycalc"
+    }
+]

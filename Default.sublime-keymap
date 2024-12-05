@@ -1,0 +1,9 @@
+[
+    {
+        "keys": ["enter"],
+        "command": "pycalc",
+        "context": [
+            { "key": "setting.is_widget", "operator": "equal", "operand": false }
+        ]
+    }
+]
