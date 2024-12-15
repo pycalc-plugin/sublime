@@ -62,7 +62,6 @@ def interact(repl, line):
     stderr = StringIO()
 
     multiline, line = line[0], line[1:]
-    sys.stdout.request = line
     with redirect_stdout(stdout), redirect_stderr(stderr):
         try:
             if multiline == "1":
@@ -96,7 +95,7 @@ help = __help__
 
     while True:
         try:
-            line = queue_in.get(timeout=2)
+            line = queue_in.get(timeout=3)
             result = interact(repl, line)
             queue_out.put(result)
         except Empty:
@@ -136,7 +135,7 @@ def init_print_result():
 def print_result():
     queue_count = 0
     try:
-        result = queue_output.get(timeout=10)
+        result = queue_output.get(timeout=30)
         queue_count += 1
         if not result:
             sublime.set_timeout_async(print_result, 10)
